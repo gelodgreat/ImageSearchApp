@@ -1,0 +1,38 @@
+{
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true
+    },
+    "plugins": [
+      "react",
+      "react-hooks"
+    ],
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2018
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "linebreak-style": ["error", "unix"],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "import/no-unresolved": "off",
+      "react/destructuring-assignment": "off",
+      "import/prefer-default-export": "off",
+      "react/prop-types": 0,
+      "@typescript-eslint/no-unused-vars": "off",
+      "no-nested-ternary": "off",
+      "no-irregular-whitespace": "off",
+      "react/jsx-filename-extension": [1, {
+        "extensions": [".js", ".jsx", "tsx", "ts"]
+      }],
+      "react/require-default-props": "warn"
+    }
+  }

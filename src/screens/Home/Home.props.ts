@@ -8,5 +8,6 @@ export interface HomePrivateProps {
   setSearchTerm: Dispatch<SetStateAction<string>>;
   loading: boolean;
   onNavigateImageDetails: (imageDetail: Hit) => void;
+  loadMore: () => void;
 }
 export interface HomeProps extends HomePublicProps, HomePrivateProps {}

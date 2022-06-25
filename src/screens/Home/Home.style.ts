@@ -10,4 +10,5 @@ export const ImageRow = styled.TouchableOpacity`
   border: 1px solid black;
   border-radius: 8px;
   margin: 8px 0px;
+  flex-direction: row;
 `;

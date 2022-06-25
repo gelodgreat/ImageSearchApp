@@ -1,15 +1,15 @@
 export const imageListReducer = (
   state = {
-    imageResults: {},
+    images: {},
     loading: true,
   },
   action: any,
 ) => {
   switch (action.type) {
     case 'UPDATE_IMAGES_RESULT': {
-      return {...state, imageResults: action.imageResults, loading: false};
+      return {...state, images: action.images, loading: false};
     }
-    case 'CLEAR_CART': {
+    case 'CLEAR_IMAGE_LIST': {
       return {};
     }
     default:

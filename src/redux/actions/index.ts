@@ -1,2 +1,2 @@
-export {updateImageList} from './images';
-export {currentImage} from './currentImage';
+export {updateImageList, clearImageList} from './images';
+export {currentImage, clearCurrentImage} from './currentImage';

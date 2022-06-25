@@ -1,3 +1,8 @@
 import {combineReducers} from 'redux';
 import {imageListReducer} from './images';
-export default combineReducers({images: imageListReducer});
+import {currentImageReducer} from './currentImage';
+
+export default combineReducers({
+  images: imageListReducer,
+  detail: currentImageReducer,
+});

@@ -34,6 +34,13 @@ const ImageDetailsScreen = (props: ImageDetailsProps) => {
           <Icon name="tags" size={20} />
           <Text style={{marginLeft: 8}}> Tags: {details.tags}</Text>
         </Row>
+        <Row style={{marginTop: 24}}>
+          <Icon name="tv" size={20} />
+          <Text style={{marginLeft: 8}}>
+            Resolution: {`${details.imageWidth}x${details.imageWidth}`}
+          </Text>
+        </Row>
+        <Row style={{marginTop: 48}}></Row>
       </ContentContainer>
     </Container>
   );

@@ -25,9 +25,7 @@ const HomeScreen = (props: HomeProps) => {
           source={{uri: itemData.previewURL}}
           style={{height: 100, width: 100, borderRadius: 8}}
         />
-        <Text style={{marginTop: '22%', marginLeft: '2%'}}>
-          Uploaded by: {itemData.user}
-        </Text>
+        <Text style={{marginLeft: '2%'}}>Uploaded by: {itemData.user}</Text>
       </ImageRow>
     );
   };

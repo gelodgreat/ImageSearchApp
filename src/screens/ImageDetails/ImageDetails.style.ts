@@ -5,9 +5,10 @@ export const Container = styled.View`
   flex: 1;
 `;
 
-export const ImageRow = styled.View`
-  padding: 8px;
-  border: 1px solid black;
-  border-radius: 8px;
-  margin: 8px 0px;
+export const ContentContainer = styled.View`
+  margin-top: 24px;
+`;
+
+export const Row = styled.View`
+  flex-direction: row;
 `;

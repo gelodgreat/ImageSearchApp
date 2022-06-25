@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "link": "react-native link"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.7",
@@ -38,6 +39,7 @@
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.69.0",
+    "@types/react-native-vector-icons": "^6.4.10",
     "@types/react-test-renderer": "^18.0.0",
     "@types/redux-promise": "^0.5.29",
     "@types/styled-components": "^5.1.25",

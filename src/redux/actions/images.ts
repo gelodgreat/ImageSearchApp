@@ -2,7 +2,7 @@ export const updateImageList = (images: any) => {
   return (dispatch: any) => {
     dispatch({
       type: 'UPDATE_IMAGES_RESULT',
-      imageResults: images,
+      images,
     });
   };
 };

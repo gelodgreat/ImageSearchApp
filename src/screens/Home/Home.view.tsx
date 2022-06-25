@@ -1,14 +1,20 @@
 import React from 'react';
 import {Container, ImageRow} from './Home.style';
 import {HomeProps} from './Home.props';
-import {ActivityIndicator, TextInput} from 'react-native-paper';
+import {ActivityIndicator, Text, TextInput} from 'react-native-paper';
 import {FlatList} from 'react-native';
 import {Hit} from 'types/Images';
 import FastImage from 'react-native-fast-image';
 
 const HomeScreen = (props: HomeProps) => {
-  const {images, searchTerm, setSearchTerm, loading, onNavigateImageDetails} =
-    props;
+  const {
+    images,
+    searchTerm,
+    setSearchTerm,
+    loading,
+    onNavigateImageDetails,
+    loadMore,
+  } = props;
 
   const renderItem = ({item}: any) => {
     const itemData: Hit = item;
@@ -19,6 +25,9 @@ const HomeScreen = (props: HomeProps) => {
           source={{uri: itemData.previewURL}}
           style={{height: 100, width: 100, borderRadius: 8}}
         />
+        <Text style={{marginTop: '22%', marginLeft: '2%'}}>
+          Uploaded by: {itemData.user}
+        </Text>
       </ImageRow>
     );
   };
@@ -32,7 +41,15 @@ const HomeScreen = (props: HomeProps) => {
         style={{marginBottom: 8}}
       />
       {loading && <ActivityIndicator animating />}
-      <FlatList data={images} renderItem={renderItem} />
+      {images && (
+        <FlatList
+          data={images}
+          renderItem={renderItem}
+          onEndReachedThreshold={0}
+          onEndReached={loadMore}
+          keyExtractor={item => item.id}
+        />
+      )}
     </Container>
   );
 };

@@ -10,6 +10,6 @@ export const getImages = async (searchTerm: string, page: number) => {
     );
     return imageResults.data;
   } catch (error) {
-    return error;
+    return 'No result';
   }
 };

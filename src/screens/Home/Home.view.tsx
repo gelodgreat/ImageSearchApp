@@ -43,7 +43,7 @@ const HomeScreen = (props: HomeProps) => {
         <FlatList
           data={images}
           renderItem={renderItem}
-          onEndReachedThreshold={0}
+          onEndReachedThreshold={0.5}
           onEndReached={loadMore}
           keyExtractor={item => item.id.toString()}
         />

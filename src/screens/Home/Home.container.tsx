@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import HomeScreen from './Home.view';
-import {getImages} from 'api_requests/getImages';
-import {Hit, Images} from 'types/Images';
+import {Hit} from 'types/Images';
 import {useDispatch, useSelector} from 'react-redux';
-import {currentImage, updateImageList} from 'redux/actions';
+import {currentImage} from 'redux/actions';
 import {useNavigation} from '@react-navigation/native';
 import {Store} from 'types/Store';
-import {clearImageList} from 'redux/actions/images';
+import {clearImageList, loadImages} from 'redux/actions/images';
 
 const HomeContainer = (props: any) => {
   const dispatch = useDispatch();
@@ -17,7 +16,6 @@ const HomeContainer = (props: any) => {
   const [page, setPage] = useState(1);
   const images: Hit[] =
     useSelector((state: Store) => state.images.images) || [];
-
   const onNavigateImageDetails = (productDetails: Hit) => {
     dispatch(currentImage(productDetails));
     navigation.navigate('Details');
@@ -27,9 +25,7 @@ const HomeContainer = (props: any) => {
     try {
       dispatch(clearImageList());
       setLoading(true);
-      const imageResults: Images = await getImages(searchTerm, page);
-      console.log(images);
-      dispatch(updateImageList(imageResults?.hits));
+      dispatch(loadImages(searchTerm, 1));
       setLoading(false);
     } catch (error) {
       console.log({error});
@@ -39,8 +35,7 @@ const HomeContainer = (props: any) => {
   const loadMore = async () => {
     setLoading(true);
     setPage(page + 1);
-    const imageResults: Images = await getImages(searchTerm, page + 1);
-    dispatch(updateImageList([...images, ...imageResults?.hits]));
+    dispatch(loadImages(searchTerm, page + 1));
     setLoading(false);
   };
 

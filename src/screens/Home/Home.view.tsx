@@ -5,6 +5,7 @@ import {ActivityIndicator, Text, TextInput} from 'react-native-paper';
 import {FlatList} from 'react-native';
 import {Hit} from 'types/Images';
 import FastImage from 'react-native-fast-image';
+import {FlashList} from '@shopify/flash-list';
 
 const HomeScreen = (props: HomeProps) => {
   const {
@@ -40,12 +41,12 @@ const HomeScreen = (props: HomeProps) => {
       />
       {loading && <ActivityIndicator animating />}
       {images && (
-        <FlatList
+        <FlashList
           data={images}
           renderItem={renderItem}
-          onEndReachedThreshold={0}
+          onEndReachedThreshold={0.5}
           onEndReached={loadMore}
-          keyExtractor={item => item.id}
+          estimatedItemSize={10}
         />
       )}
     </Container>

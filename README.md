@@ -1,4 +1,7 @@
 General:
+
+* This is a simple app created to test libraries, improve and showcase my coding skills as a React Developer
+
 * Run yarn install to install all package dependencies
 
 Android

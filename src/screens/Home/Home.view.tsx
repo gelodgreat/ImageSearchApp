@@ -46,6 +46,7 @@ const HomeScreen = (props: HomeProps) => {
           renderItem={renderItem}
           onEndReachedThreshold={0.5}
           onEndReached={loadMore}
+          keyExtractor={item => item.id.toString()}
           estimatedItemSize={10}
         />
       )}

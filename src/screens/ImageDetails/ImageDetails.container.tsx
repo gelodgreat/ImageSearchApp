@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import ImageDetailsScreen from './ImageDetails.view';
 import {useSelector} from 'react-redux';
 import {Store} from 'types/Store';
 
 const ImageDetailsContainer = (props: any) => {
-  const details = useSelector((state: Store) => state.detail) || {};
+  const detailsId =
+    useSelector((state: Store) => state.detail?.detailsId) || '';
+  const images = useSelector((state: Store) => state.images.images) || [];
+  const details = useMemo(
+    () => images.find(list => list.id === detailsId),
+    [detailsId, images],
+  );
   const generatedProps = {details};
 
   return <ImageDetailsScreen {...generatedProps} {...props} />;

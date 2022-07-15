@@ -7,7 +7,6 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const ImageDetailsScreen = (props: ImageDetailsProps) => {
   const {details} = props;
-  console.log({details});
   return (
     <Container>
       <FastImage

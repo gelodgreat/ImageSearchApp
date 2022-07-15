@@ -1,6 +1,6 @@
 import {Hit} from './Images';
 
 export interface Store {
-  detail: Hit;
+  detail: {detailsId: string | number};
   images: {images: Hit[]};
 }

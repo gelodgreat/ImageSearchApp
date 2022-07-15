@@ -16,8 +16,9 @@ const HomeContainer = (props: any) => {
   const [page, setPage] = useState(1);
   const images: Hit[] =
     useSelector((state: Store) => state.images.images) || [];
+
   const onNavigateImageDetails = (productDetails: Hit) => {
-    dispatch(currentImage(productDetails));
+    dispatch(currentImage(productDetails.id));
     navigation.navigate('Details');
   };
 

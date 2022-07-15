@@ -1,4 +1,4 @@
-export const currentImage = detail => {
+export const currentImage = (detail: string | number) => {
   return dispatch => {
     dispatch({
       type: 'SET_IMAGE_DETAIL',

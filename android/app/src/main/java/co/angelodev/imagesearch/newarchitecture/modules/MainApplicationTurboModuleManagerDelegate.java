@@ -1,4 +1,4 @@
-package com.imagesearchapp.newarchitecture.modules;
+package co.angelodev.imagesearch.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

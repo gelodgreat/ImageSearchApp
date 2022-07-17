@@ -1,4 +1,4 @@
-package com.imagesearchapp;
+package co.angelodev.imagesearch;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
